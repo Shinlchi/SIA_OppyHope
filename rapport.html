@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>Rapport SIA - Oppy Hope</title>
+
+    <link rel="stylesheet" href="rapport/css/stylesheet.css" />
+</head>
+
+<header>
+    <div class="banniere">
+    </div>
+</header>
+
+<body class="article">
+    <div id="header">
+    <h1>Rapport SIA - Oppy Hope</h1>
+    </div>
+    <div id="content">
+        <div class="sect1">
+        <h2 >Introduction</h2>
+        <div class="sectionbody">
+        <div class="paragraph">
+            <p>Le projet noté de SIA consiste à développer un clone 3D du jeu Asteroid voici le rapport. </p>
+        </div>
+        <div class="paragraph">
+            <p>Asteroid est créé ne 1978, il est sorti sur ATARI et met en scene un vaisseau se déplaçant dans l'espace, c'est pourquoi il est nécessaire de comprendre et de calculer le principe d'inertie.
+                En effet, dans l'espace, l'absence d'air induit une ascence de frottement, c'est pourquoi un objet dérive dans l'espace.
+            </p>
+        </div>
+        <div class="paragraph">
+            <p>Afin d'apporter une certaine profondeur au jeu d'arcade Asteroid, sa dérivé <span style='color:#f7c700'>Oppy Hope</span>
+                propose une mise en scene du regratté Opprtunity, un rover envoyé sur Mars.
+            </p>
+        </div>
+        <div class="paragraph">
+            <p>En Juin 2018, le rover est pris dans une gigantesque tempête interceptant presque totalement le rayonnement solaire dont ses panneaux solaires ont besoin pour recharger les batteries. 
+                    253 tentatives de le recontacter depuis la Terre ont été réalisées entre le 10 juin et le 7 novembre 2018, sans aucun succès.
+                Après 15 années d'exploration, le 13 février 2019 la NASA s'est décidé, non sans mal, à dire aurevoir à Opporunity.
+            </p>
+        </div>
+        <div class="paragraph">
+                <p>Le jeu <span style='color:#f7c700'>Oppy Hope</span> est un hommage. </p>
+                <p>OPORUNITY 24/01/2004 - 10/06/2018</p>
+            </div>
+    </div>
+    </div>
+    <div class="sect1">
+        <h2 >Architecture</h2>
+        <div class="sectionbody">
+            <div class="paragraph">
+                <p>Dans un permier temps, il était nécessaire de comprendre les mécanismes de Three.js.</p>
+            </div>
+            <div class="paragraph">
+                <p>Pour cela la premier création d'une scene 3D s'est effectué sur un index.html contenant un script. La phase de test s'est déroulé au "fil de l'eau".</p>
+            </div>
+            <div class="paragraph">
+                    <p>Après avoir créé une scene à laquelle on ajoute une objet chargé à partir d'un modele, on se rend rapidement compte que le développement d'un jeu dans un script unique pose des problèmes.
+                        Il semble donc impératif de maîtriser la programmation orienté objet en JavaScript. Après lecture de documentation à ce sujet il ressort les fichiers .js suivants: 
+                    </p>
+            </div>
+            <div class="paragraph">
+                <p>
+                    Main</br>
+                    Skybox </br>
+                    SpaceShip  </br>
+                    Asteroid </br>
+                    SpaceShipEnnemi</br>
+                    Projectile</br>
+                    Hud (l'interface)</br>
+                    Audio</br>
+                    GestionNiveau</br>
+                </p>
+            </div>
+            <div class="paragraph">
+                    <p>
+                        Chaque fichier est un objet surchargé en fonction de son rôle. Par exemple l'objet Main prend le constructeur de THREE.Scene
+                        Cela permet de centraliser les actions et ainsi d'obtenir une certaine logique de développement.
+                    </p>
+            </div>
+        </div>
+    </div>
+    <div class="sect1">
+    <h2 id="_gradle">Gestion des évènements</h2>
+    <div class="sectionbody">
+        <h3>Gestion des collisions</h2>
+        <div class="paragraph">
+        <p>
+            La collision d'un objet par un autre est gérée séparément. Lors de la boucle d'animation chaque objet est déplacé, pendant son déplacement elle apelle sa fonction gestionCollision()</br>
+            Par exemple un astéroid vérifie que la distance de sa position par rapport à notre SpaceShip ne soit pas inférieur à une certaine distance.</br>
+            Le cas échéant on lève un évènement, la perte d'une vie ou bien le GameOver.</br>
+            Cette dynamique s'applique à chaque objet de la scene.
+        </p>
+        </div>
+        <h3>Gestion des évènements clavier</h2>
+        <div class="paragraph">
+            <p>
+                Le jeu possède plusieurs états, les événements claviers capturé provoque un comportement selon l'état du jeu : acceuil, en jeu, en pause, pret à jouer.
+            </p>
+    </div>
+    <div class="sect1">
+            <h2>Audio et graphisme</h2>
+                <div class="paragraph">
+                        <p>
+                            Le jeu a un aspect simple, ce choix est motivé par la sélection de la bande son utilisé. En effet le jeu Secret of Mana, disponible sur une console 16bits, ayant bercé mon enfance j'ai intégré quelques musique de ce jeu. 
+                          </p>
+    </div>
+    <div class="sect1">
+            <h2>Bibliothèques utilisée</h2>
+                <div class="paragraph">
+                        <p>
+                           Afin de capturer les événements clavier le jeu intègre la bibliothèque KEYDROWN.js. Elle permet de gérer le maintient en plus de la pression simple d'une touche.
+                        </p> 
+                        <p>L'intégration de la musique est géré à l'aide la bibliothèque Howl.js.</p>
+    </div>
+</div>
+</body>
+</html>

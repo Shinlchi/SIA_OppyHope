@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset=utf-8>
+		<title>My first three.js app</title>
+
+		<!-- Librairie JS--> 
+		<script type='text/javascript' src="src/lib/three.js"></script>
+		<script type='text/javascript' src="src/lib/Detector.js"></script>
+		<script src="src/lib/ColladaLoader.js"></script>
+		<script src="src/lib/threex/THREEx.screenshot.js"></script>
+		<script src="src/lib/threex/THREEx.FullScreen.js"></script>
+		<script src="src/lib/threex/THREEx.WindowResize.js"></script>
+		<script src="src/lib/OrbitControls.js"></script>
+		
+		<!-- Api externe -->
+		<script type='text/javascript' src="src/lib/keydrown.js"></script>
+		<script type='text/javascript' src="src/lib/howler.js"></script>
+		
+		<!-- CSS -->
+		<link href="src/css/style.css" rel="stylesheet" />
+	</head>
+	<body>
+		<!-- Home-->
+		<div id="home">
+			<div id="top-home">
+					<div id="title"><span>Oppy Hope</span></div>
+			</div>	
+			<div id="middle-home">
+				<img src="src/medias/acceuil.jpg" width=720 height=405>
+			</div>
+			<div id="bottom-home">
+					<marquee direction="up" behavior="scroll" scrollamount="2" style="height:125;width:720px;background-color:#000000;font-size:16pt;color:#ffffff;border-width:0;border-style:solid;border-color:#000000;text-align:center; " > 
+						Programmé par Daniel PHAM 
+						</br></br></br></br></br></br>
+						Les étoiles sont des milliers à briller dans le ciel chaque nuit. 
+						</br></br>
+						</br>Si lointaines et mystérieuses. 
+						</br></br>
+						</br>L'humanité a longtemps contempler les cieux en quête de réponse.. 
+						</br></br>
+						</br>Elle developpa des technologies de pointes afin d'observer les astres, d'étudier le système solaire et déceller les mystères de l'univers..
+						</br>Ella envoya le robot Opportunity sur Mars. 
+						</br></br></br></br>
+						</br>Mais perdit le contact depuis le 13 février 2019...
+						</br></br>Désormais c'est vous qu'elle envoie !
+						</br></br></br></br> Sauvez Oppy !
+					</marquee>	
+			</div>
+			<div id="levelOne"></div>	
+			<div id="game-over"></div>
+			<div id="victory"></div>
+		</div>	
+		<div id="info">
+			<div id="life"></div> 	
+			<div id="info-bottom">P - Pause / Information</div>
+		</div>
+		
+		<div id="instruction">
+			<div id="instruction-left">
+				<img src="src/medias/fleche.png"></br>
+			</div>
+			<div id="instruction-right"><img src="src/medias/fleche.png"></br></div>
+			<div id="instruction-center" >Passer sur un bord .. </br>Vous fait apparaitre a l oppose ! </br> Tirez avec espace et deplacez vous a l aide des fleches</br>Au debut d un niveau appuyez sur Entrer pour continuer</br>P  pause</br>M  mute</br>I  invincible</br>K  kill them all</br>L  GameOver</div>
+		</div>
+		</div>
+		<script src="src/js/spaceShipEnnemi.js"></script>
+		<script src="src/js/audio.js"></script>
+		<script src="src/js/hud.js"></script>
+		<script src="src/js/asteroid.js"></script>
+		<script src="src/js/gestionNiveau.js"></script>
+		<script src="src/js/projectile.js"></script>
+		<script src="src/js/skybox.js"></script>
+		<script src="src/js/spaceShip.js"></script>
+		<script src="src/js/main.js"></script>
+		<script src="src/js/index.js" type="text/javascript"></script>
+	</body>
+</html>
